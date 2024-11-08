@@ -31,7 +31,7 @@ class Wizard:
             self.count1 += 1
             if self.count1 > len(self.all_name_image_wizard) - 1:
                 self.count1 = 0
-        if self.count_animation_wizard > 80:
+        if self.count_animation_wizard > 100:
             self.count_animation_wizard = 0
         self.count_animation_wizard += 1
 
