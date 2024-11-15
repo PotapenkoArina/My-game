@@ -4,17 +4,27 @@ import pygame
 pygame.init()
 
 class Hero:
-    def __init__(self):
-        self.hero_width= 320
-        self.hero_height= 230
-        self.hero_x= 5
-        self.hero_y= 520
-        self.count_animation= 0
-        self.all_name_image = ['/main_character/0.png', '/main_character/1.png', '/main_character/2.png']
-        self.list_image = []
-        self.count = 0
-        self.all_image()
-        self.image = self.load_image(name_image= self.all_name_image[0])
+    def __init__(
+            self,
+            hero_width: int= 320,
+            hero_height: int= 230, 
+            hero_x: int= 5, 
+            hero_y: int= 520, 
+            count_animation:int= 0,
+            all_name_image: list= ['/main_character/0.png', '/main_character/1.png', '/main_character/2.png'],
+            count: int= 0
+            ):
+                self.hero_width= hero_width
+                self.hero_height= hero_height
+                self.hero_x= hero_x
+                self.hero_y= hero_y
+                self.count_animation= count_animation
+                self.all_name_image = all_name_image
+                self.list_image = []
+                self.count = count
+                
+                self.all_image()
+                self.image = self.load_image(name_image= self.all_name_image[0])
         
     def load_image(self, name_image: str):
         path = abspath(name_file= name_image)
@@ -36,6 +46,6 @@ class Hero:
         self.count_animation += 1
 
 hero = Hero()
-print(hero.image)
+
         
         
